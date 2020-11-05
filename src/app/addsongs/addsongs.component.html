@@ -1,0 +1,30 @@
+<div style="width: 300px; margin-left: 10rem;border-style: solid;border-width: 5px;">
+    <div class="Songhead">
+            <mat-label>Add Songs</mat-label>
+    </div>
+    <div class="Songtitle">
+        <mat-form-field>
+            <mat-label>Song Title</mat-label>
+            <input matInput [(ngModel)]="Songtitle" required/>
+        </mat-form-field>
+    </div>
+    <div class="Songdurations">
+        <mat-form-field>
+            <mat-label>Song Duratio(Minutes)</mat-label>
+            <input matInput [(ngModel)]="SongDurations" required/>
+        </mat-form-field>
+    </div>
+    <div class="Songtype" *ngFor="let g of this.genre">
+        <section class="example-section">
+            <input type="checkbox" value="Slow" [(ngModel)]="g.checked" >{{g.name}}
+            <!-- <mat-checkbox class="example-margin" >Slow</mat-checkbox> -->
+            <!-- <mat-checkbox class="example-margin" >Romance</mat-checkbox>
+            <mat-checkbox class="example-margin" >Remixed</mat-checkbox> -->
+          </section>
+    </div>
+    <div style="text-align: center; padding-left: 6.5rem;padding-bottom: 1rem;" >
+        <section>
+            <button [disabled]="Valid" mat-raised-button color="primary" (click)="OnSave()" >Save</button>        
+        </section>
+    </div>
+</div>
